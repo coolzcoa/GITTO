@@ -1,0 +1,30 @@
+
+
+
+
+MY JAVA SOLUTION FOR FINDING POWER OF THE NUMBER.
+////////////////////////////
+class Solution {
+    public double myPow(double x, int n) {
+        if(n==0){
+            return 1;
+        }if(n<0){
+//To Avoid Integer over flow
+            if(n==Integer.MIN_VALUE){
+               n = Integer.MAX_VALUE+1;
+            }
+            else{
+            n = -n;
+            x = 1/x;
+            }
+        }
+//If n is even
+        if(n%2==0){
+            return myPow(x*x,n/2);
+        }
+//If n is Odd
+         else{
+            return x*myPow(x*x,n/2);
+        }
+    }
+}
