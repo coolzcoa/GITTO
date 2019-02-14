@@ -9,6 +9,7 @@ class Solution {
         if(n==0){
             return 1;
         }if(n<0){
+//To Avoid Integer over flow
             if(n==Integer.MIN_VALUE){
                n = Integer.MAX_VALUE+1;
             }
@@ -17,9 +18,12 @@ class Solution {
             x = 1/x;
             }
         }
+//If n is even
         if(n%2==0){
             return myPow(x*x,n/2);
-        }else{
+        }
+//If n is Odd
+         else{
             return x*myPow(x*x,n/2);
         }
     }
